@@ -36,8 +36,13 @@ class TxtFileHandler():
             file.write(data)
 
 handler = TxtFileHandler("test.txt")
+test_phrase = "Здравствуйте Владимир.\n"
 
-# print(handler.read_file())
-# print(handler)
+def main():
+    print(handler.read_file())
+    print(handler)
+    handler.write_file(test_phrase)
+    handler.append_file(test_phrase)
 
-test_phrase = "Здравствуйте Владимир."
+if __name__ == "__main__":
+    main()
