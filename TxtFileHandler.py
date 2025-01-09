@@ -37,8 +37,11 @@ class TxtFileHandler:
         filepath:str - Путь к файлу.
         data:str - Данные для записи в файл.
         """
-        with open(filepath, "w", encoding="utf-8") as file:
-            file.write(*data)
+        try:
+            with open(filepath, "w", encoding="utf-8") as file:
+                file.write(*data)
+        except:
+            print("Ошибка записи в файл")
 
     def append_file(self, filepath:str, data:str)->None:
         """
@@ -47,8 +50,11 @@ class TxtFileHandler:
         filepath:str - Путь к файлу.
         data:str - Данные для добавления в файл.
         """
-        with open(filepath, "a", encoding="utf-8") as file:
-            file.write(data)
+        try:
+            with open(filepath, "a", encoding="utf-8") as file:
+                file.write(data)
+        except:
+            print("Ошибка записи в файл")
 
 handler = TxtFileHandler("test.txt")
 test_phrase = "Здравствуйте Владимир.\n"
